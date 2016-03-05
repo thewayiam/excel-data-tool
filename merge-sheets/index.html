@@ -80,6 +80,8 @@ function main(excel_sheets, warnings)
         defaultLanguage: 'zh_tw',
         currentLanguage: 'zh_tw'
     });
+
+    var nav = Array.prototype.slice.call(document.querySelectorAll('#nav > a'));
     nav.forEach(function (item) {
         item.onclick = function (e) {
         i18n.changeLanguage(this.getAttribute('data-lang-ref'));
