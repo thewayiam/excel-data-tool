@@ -4,9 +4,13 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
+<nav>
+<a href="#" title="Change current language to cht" data-lang-ref="zh_hant">繁體中文</a>
+<a href="#" title="Change current language to English" data-lang-ref="en">English</a>
+</nav>
 <h1 data-translatable>
     <span>將 Excel 同格式的各分頁合成一個 CSV 的工具</span>
-    <span>test</span>
+    <span>Merge Excel Sheets(with same schema) to One CSV</span>
 </h1>
 <p>您手上的 Excel 檔每個分頁格式都一模一樣，你想把他合併成一個 CSV 嗎? <a href="sample.xls">範例Excel檔</a></p>
 <div style="float: left">
@@ -75,6 +79,12 @@ function main(excel_sheets, warnings)
         languages: ['zh_tw', 'en'],
         defaultLanguage: 'zh_tw',
         currentLanguage: 'zh_tw'
+    });
+    nav.forEach(function (item) {
+        item.onclick = function (e) {
+        i18n.changeLanguage(this.getAttribute('data-lang-ref'));
+        e.preventDefault();
+        };
     });
 </script>
 </html>
