@@ -2,9 +2,19 @@
 <head>
 <script src="../libs/xlsx.core.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../dist/dom-i18n.min.js"></script>
+<script>
+    domI18n({
+        languages: ['zh_tw', 'en']
+        selector: '[data-translatable]',
+        separator: ' // ',
+        languages: ['zh_tw', 'en'],
+        defaultLanguage: 'zh_tw'
+    });
+</script>
 </head>
 <body>
-<h1>將 Excel 同格式的各分頁合成一個 CSV 的工具</h1>
+<h1 data-translatable>將 Excel 同格式的各分頁合成一個 CSV 的工具 // test</h1>
 <p>您手上的 Excel 檔每個分頁格式都一模一樣，你想把他合併成一個 CSV 嗎? <a href="sample.xls">範例Excel檔</a></p>
 <div style="float: left">
     <div style="border:1px solid">
@@ -20,7 +30,7 @@
 </div>
 <hr style="clear: both">
 結果
-輸出分隔符號: 
+輸出分隔符號:
 <label><input type="radio" name="split" value="," checked>逗點</label>
 <label><input type="radio" name="split" value="tab">TAB</label>
 <br>
